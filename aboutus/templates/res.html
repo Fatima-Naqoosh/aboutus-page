@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
+<div class="container-fluid">
+         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+              <button type="button"  class="btn btn-dark btn-lg" style="background: transparent;float: right;">HOME</button>
+              <button type="button"  class="btn btn-dark btn-lg" style="background: transparent;float: right;">LOGIN</button>
+              <button type="button"  class="btn btn-dark btn-lg active" style="background: transparent;float: right;">ABOUT US</button>
+         </nav>
+</div>
+{% for k in dests %}
+<br>
+<h1 style="text-align:center">{{ k.name }}</h1><br>
+<div class="box">
+<img src="{{ k.img.url }}" alt="image" class="center" width="30%" height="30%" style="position:center;"><br></div>
+    <p style="margin-left:200px;font-size:21px;">{{ k.desc }}</p><br>
+<h2 style="text-align:center;"><b>CONTRIBUTION:</b></h2>
+<p style="font-size:21px;text-align:center;">{{ k.cont }}</p><br>
+<hr>
+
+{% endfor %}
+</body>
+</html>
